@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Respiratory Disease Detection Form</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        max-width: 800px;
+        margin: auto;
+        padding: 20px;
+        background-color: #f4f4f4;
+        border-radius: 8px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    }
+    h2 {
+        text-align: center;
+        color: #333;
+    }
+    .form-group {
+        margin-bottom: 20px;
+    }
+    label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+    input[type="text"], input[type="number"], select {
+        width: 100%;
+        padding: 10px;
+        margin-top: 5px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 16px;
+    }
+    input[type="radio"] {
+        margin-right: 10px;
+    }
+    .submit-btn {
+        width: 100%;
+        padding: 12px;
+        background-color: #28a745;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 18px;
+    }
+    .submit-btn:hover {
+        background-color: #218838;
+    }
+</style>
+</head>
+<body>
+    <h2>Respiratory Disease Detection Form</h2>
+    <form id="respiratory-form" action="http://localhost:3000/submit" method="POST">
+
+        <!-- Demographic Information -->
+        <h3>Demographic Information</h3>
+        <div class="form-group">
+            <label>Age</label>
+            <input type="number" id="age" required>
+        </div>
+        <div class="form-group">
+            <label>Gender</label>
+            <select id="gender" required>
+                <option value="">Select</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>Smoking History</label>
+            <select id="smoking-history" required>
+                <option value="">Select</option>
+                <option value="Non-smoker">Non-smoker</option>
+                <option value="Smoker">Smoker</option>
+                <option value="Former Smoker">Former Smoker</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>City</label>
+            <input type="text" id="city" required>
+        </div>
+
+        <!-- Pulmonary Function -->
+        <h3>Pulmonary Function</h3>
+        <div class="form-group">
+            <label>PEFR</label>
+            <input type="number" id="pefr" required>
+        </div>
+        <div class="form-group">
+            <label>FEV1</label>
+            <input type="number" id="fev1" required>
+        </div>
+        <div class="form-group">
+            <label>FVC</label>
+            <input type="number" id="fvc" required>
+        </div>
+        <div class="form-group">
+            <label>FEV1/FVC Ratio</label>
+            <input type="number" id="fev1_fvc_ratio" step="0.01" required>
+        </div>
+
+        <!-- Clinical Symptoms -->
+        <h3>Clinical Symptoms</h3>
+        <div class="form-group">
+            <label>Cough</label>
+            <div class="form-group-radio">
+                <input type="radio" name="cough" value="No Cough" required> No Cough<br>
+                <input type="radio" name="cough" value="Dry Cough" required> Dry Cough<br>
+                <input type="radio" name="cough" value="Productive Cough" required> Productive Cough<br>
+                <input type="radio" name="cough" value="Chronic Cough" required> Chronic Cough<br>
+                <input type="radio" name="cough" value="Occasional Cough" required> Occasional Cough
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Wheezing</label>
+            <input type="radio" name="wheezing" value="Yes" required> Yes
+            <input type="radio" name="wheezing" value="No" required> No
+        </div>
+        <div class="form-group">
+            <label>Shortness of Breath</label>
+            <input type="radio" name="shortness-of-breath" value="Yes" required> Yes
+            <input type="radio" name="shortness-of-breath" value="No" required> No
+        </div>
+        <div class="form-group">
+            <label>Chest Pain</label>
+            <input type="radio" name="chest-pain" value="Yes" required> Yes
+            <input type="radio" name="chest-pain" value="No" required> No
+        </div>
+
+        <!-- Medical History -->
+        <h3>Medical History</h3>
+        <div class="form-group">
+            <label>Past Respiratory Infections</label>
+            <select id="past-infections" required>
+                <option value="">Select</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>Family History</label>
+            <select id="family-history" required>
+                <option value="">Select</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+        </div>
+
+        <!-- Environmental and Lifestyle Factors -->
+        <h3>Environmental and Lifestyle Factors</h3>
+        <div class="form-group">
+            <label>Air Quality and Pollution (1-10)</label>
+            <input type="number" id="air-quality" min="1" max="10" required>
+        </div>
+       
+
+        <div class="form-group">
+            <label>Living Conditions</label>
+            <select id="living-conditions" required>
+                <option value="">Select</option>
+                <option value="Mold">Mold</option>
+                <option value="Dust">Dust</option>
+                <option value="Allergens">Allergens</option>
+                <option value="Clean">Clean</option>
+                <option value="Others">Others</option>
+            </select>
+        </div>
+
+        
+        <div class="form-group">
+            <label>Physical Activity</label>
+            <select id="physical-activity" required>
+                <option value="">Select</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="submit-btn">Submit</button>
+    </form>
+
+    <script>
+        document.getElementById('respiratory-form').addEventListener('submit', function (event) {
+            event.preventDefault();
+    
+            const data = {
+                Age: document.getElementById('age').value,
+                Gender: document.getElementById('gender').value,
+                SmokingHistory: document.getElementById('smoking-history').value,
+                City: document.getElementById('city').value,
+                PEFR: document.getElementById('pefr').value,
+                FEV1: document.getElementById('fev1').value,
+                FVC: document.getElementById('fvc').value,
+                FEV1_FVC: document.getElementById('fev1_fvc_ratio').value,
+                Cough: document.querySelector('input[name="cough"]:checked').value,
+                Wheezing: document.querySelector('input[name="wheezing"]:checked').value,
+                ShortnessOfBreath: document.querySelector('input[name="shortness-of-breath"]:checked').value,
+                ChestPain: document.querySelector('input[name="chest-pain"]:checked').value,
+                PastInfections: document.getElementById('past-infections').value,
+                FamilyHistory: document.getElementById('family-history').value,
+                AirQuality: document.getElementById('air-quality').value,
+                LivingConditions: document.getElementById('living-conditions').value,
+                PhysicalActivity: document.getElementById('physical-activity').value
+            };
+    
+            fetch('http://localhost:3000/submit', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.text();
+            })
+            .then(text => {
+                alert('Data saved successfully.');
+                console.log(text);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Failed to save data.');
+            });
+        });
+    </script>
+    
+</body>
+</html>

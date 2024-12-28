@@ -1,0 +1,19 @@
+{
+  "name": "asthma-risk-predicition-using-machine-learning-and-internet-of-things-main",
+  "version": "1.0.0",
+  "description": "## ABSTRACT              In this project, we present an asthma risk prediction tool based on machine learning. The entire tool is implemented on a smartphone as a mobile-health application using the resources of Internet-of-Things (IoT). **Peak Expiratory Flow Rates (PEFR)** are commonly measured using external instruments such as peak flow meters and are well known asthma risk predictors. In this work, we find a correlation between the particulate matter found indoors and the outside weather with the PEFR. Convolutional neural network architecture is used to map the relationship between the indoor PM and weather data to the PEFR values. The proposed method is compared with the state-of-the-art deep neural network-based techniques in terms of the root mean square and mean absolute error accuracy measures. These performance measures are better for the proposed method than other methods discussed in the literature surveys. The entire setup is implemented on a smartphone as an app. An IoT system including a Raspberry Pi is used to collect the input data. This assistive tool can be a cost-effective tool for predicting the risk of asthma attacks.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.7.7",
+    "body-parser": "^1.20.3",
+    "cors": "^2.8.5",
+    "express": "^4.21.1",
+    "fs": "^0.0.1-security"
+  }
+}

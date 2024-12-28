@@ -1,0 +1,22 @@
+TO run this code you have to install Node.JS
+
+index.html
+server.js
+
+Ky app merr te dhena nga index.html ku ka 1 forme dhe te njejtat i degron ne csv file ne folderin static/ 
+emri i csv  respiratory_data.csv
+
+Poashtu mirren te dhena per Kualitetin  Ajrit nga api.openaq.org
+API Eshte ky
+// API endpoint and headers
+const apiUrl = "https://api.openaq.org/v2/locations/2163058?limit=1000";
+const apiHeaders = {
+    "x-api-key": "b77f00d01a26e10d71d1a8ba139c4df451e644ebca42d0519592b9b7eadfaee2"
+};
+
+Lokacioni i tetoves eshte me nr 2163058
+
+per ta nis app duhet te hysh te folder static dhe node server.js
+PS D:\Asthma-Risk-Predicition-Using-Machine-Learning-and-Internet-of-Things-main\static> node server.js
+>>
+Server running at http://localhost:3000
