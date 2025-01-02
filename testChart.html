@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>City Data Chart</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        /* Scaling down the chart to 20% of the original size */
+        #myChart {
+            width: 20% !important;
+            height: 20% !important;
+        }
+    </style>
+</head>
+<body>
+
+<h2>City Data Chart (20% Size)</h2>
+<canvas id="myChart"></canvas>
+
+<script src="https://cdn.jsdelivr.net/npm/papaparse/papaparse.min.js"></script>
+<script>
+    // Fetching the CSV file
+    fetch('respiratory_data.csv')
+        .then(response => response.text())
+        .then(data => {
+            // Parsing the CSV data
+            const parsedData = Papa.parse(data, {header: true});
+            const cityData = {};
+
+            // Counting the occurrences of each city
+            parsedData.data.forEach(row => {
+                const city = row.City;
+                if (city) {
+                    cityData[city] = (cityData[city] || 0) + 1;
+                }
+            });
+
+            // Preparing data for the chart
+            const chartLabels = Object.keys(cityData);
+            const chartData = Object.values(cityData);
+
+            // Chart.js code to render the pie chart
+            const ctx = document.getElementById('myChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'pie',
+                data: {
+                    labels: chartLabels,
+                    datasets: [{
+                        label: 'City Data',
+                        data: chartData,
+                        backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0', '#9966FF'],
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(tooltipItem) {
+                                    return tooltipItem.label + ': ' + tooltipItem.raw;
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        });
+</script>
+
+</body>
+</html>

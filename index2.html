@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Settle in Denmark</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      min-height: 100vh;
+      flex-direction: column;
+    }
+
+    .banner {
+      width: 100%;
+      background-color: white;
+      color: #333;
+      display: flex;
+      align-items: center;
+      padding: 20px;
+      margin-bottom: 30px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    .banner i {
+      font-size: 30px;
+      margin-right: 15px;
+      color: #16a085;
+    }
+    .banner h1 {
+      font-size: 28px;
+      font-weight: bold;
+      margin: 0;
+    }
+    .rounded-rectangle {
+      width: 80%;
+      max-width: 600px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #f3f3f3;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      font-family: Arial, sans-serif;
+    }
+    .rounded-rectangle h2 {
+      margin-bottom: 10px;
+      font-size: 1.5em;
+      color: #333;
+    }
+    .rounded-rectangle ul {
+      list-style-type: none;
+      padding-left: 0;
+      color: #333;
+    }
+    .rounded-rectangle ul li {
+      font-size: 1.1em;
+      margin-bottom: 10px;
+    }
+    .rectangles-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      width: 100%;
+      max-width: 1200px;
+    }
+
+    .rectangle {
+      padding: 30px;
+      background-color: white;
+      color: #333;
+      border-radius: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      font-size: 16px;
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+    .rectangle:hover {
+      transform: scale(1.05);
+    }
+    .rectangle h1 {
+      font-size: 28px;
+      color: #2c3e50;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+    .rectangle h2 {
+      font-size: 20px;
+      color: #16a085;
+      margin-bottom: 20px;
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      overflow: auto;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+    }
+
+    .modal-content {
+      background-color: white;
+      margin: 5% auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%;
+      border-radius: 10px;
+      color: #333;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      position: relative;
+    }
+
+    .close {
+      color: #aaa;
+      font-size: 28px;
+      font-weight: bold;
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: black;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .return-btn {
+      padding: 10px 20px;
+      background-color: #16a085;
+      color: white;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+
+    .return-btn:hover {
+      background-color: #1abc9c;
+    }
+  </style>
+</head>
+<body>
+  <div class="banner">
+    <i class="fas fa-heartbeat"></i>
+    <h1>Healthcare</h1>
+  </div>
+
+  <div class="rectangles-container">
+    <div class="rectangle" onclick="openModal(1)">
+      <h1>Постапка за Ин Витро</h1>
+      <h2>Сите потребни информации за постапката за БПО</h2>
+      ... повеќе
+    </div>
+
+    <div class="rectangle" onclick="openModal(2)">
+      <h1>Здравствено осигурување</h1>
+      <h2>Одјавени сте со М2 образец од вашиот работодавец?</h2>
+      ... повеќе
+    </div>
+
+    <div class="rectangle" onclick="openModal(3)">
+      <h1>Породување</h1>
+      <h2>Што треба да знаете пред да се породите!</h2>
+      ... повеќе
+    </div>
+  </div>
+
+  <div id="modal-1" class="modal">
+    
+        
+    <div class="modal-content">
+      <div class="rounded-rectangle">
+        <h2>Потребни документи:</h2>
+        <ul>
+            <li>Предлог за БПО, кој го пополнува избраниот гинеколог;</li>
+            <li>Потпишана изјава за БПО;</li>
+            <li>Податок за брачна состојба (копија од извод на венчани);</li>
+            <li>Изјава заверена на нотар за период на вонбрачно живеење доколку подносителите не се во брачна заедница;</li>
+            <li>Потврда од подрачната служба на Фондот за претходно искористено право на БПО, надоместок за набавени и искористени лекови потребни за вршење на БПО постапка или остварено право на надоместок на плата за привремена спреченост за работа поради бременост, породување и мајчинство.</li>
+        </ul>
+    </div>
+    <div class="rounded-rectangle">
+      <h2>Потребни документи:</h2>
+      <ul>
+          <li>Предлог за БПО, кој го пополнува избраниот гинеколог;</li>
+          <li>Потпишана изјава за БПО;</li>
+          <li>Податок за брачна состојба (копија од извод на венчани);</li>
+          <li>Изјава заверена на нотар за период на вонбрачно живеење доколку подносителите не се во брачна заедница;</li>
+          <li>Потврда од подрачната служба на Фондот за претходно искористено право на БПО, надоместок за набавени и искористени лекови потребни за вршење на БПО постапка или остварено право на надоместок на плата за привремена спреченост за работа поради бременост, породување и мајчинство.</li>
+      </ul>
+  </div>
+  <div class="rounded-rectangle">
+    <h2>Потребни документи:</h2>
+    <ul>
+        <li>Предлог за БПО, кој го пополнува избраниот гинеколог;</li>
+        <li>Потпишана изјава за БПО;</li>
+        <li>Податок за брачна состојба (копија од извод на венчани);</li>
+        <li>Изјава заверена на нотар за период на вонбрачно живеење доколку подносителите не се во брачна заедница;</li>
+        <li>Потврда од подрачната служба на Фондот за претходно искористено право на БПО, надоместок за набавени и искористени лекови потребни за вршење на БПО постапка или остварено право на надоместок на плата за привремена спреченост за работа поради бременост, породување и мајчинство.</li>
+    </ul>
+</div>
+<div class="rounded-rectangle">
+  <h2>Потребни документи:</h2>
+  <ul>
+      <li>Предлог за БПО, кој го пополнува избраниот гинеколог;</li>
+      <li>Потпишана изјава за БПО;</li>
+      <li>Податок за брачна состојба (копија од извод на венчани);</li>
+      <li>Изјава заверена на нотар за период на вонбрачно живеење доколку подносителите не се во брачна заедница;</li>
+      <li>Потврда од подрачната служба на Фондот за претходно искористено право на БПО, надоместок за набавени и искористени лекови потребни за вршење на БПО постапка или остварено право на надоместок на плата за привремена спреченост за работа поради бременост, породување и мајчинство.</li>
+  </ul>
+</div>
+      <button class="return-btn" onclick="closeModal(1)">Close</button>
+    </div>
+  </div>
+
+  
+
+  <script>
+    function openModal(modalId) {
+      document.getElementById(`modal-${modalId}`).style.display = 'flex';
+    }
+
+    function closeModal(modalId) {
+      document.getElementById(`modal-${modalId}`).style.display = 'none';
+    }
+  </script>
+</body>
+</html>
