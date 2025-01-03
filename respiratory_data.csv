@@ -1,0 +1,13 @@
+Age,Gender,SmokingStatus,City,perf,fev1,fvc,fev1_fvc_ratio,Condition,Medication,AllergyStatus,AirPollution,PM10,NO2,SO2,PM25,O3
+25,Male,Smoker,Tetovo,75,120,210,100,Dry Cough,Yes,Yes,No,Yes,No,10,29.12,21.53,-0.02,14.95,30.33
+45,Female,Smoker,Prilep,240,100,199,100,Dry Cough,Yes,Yes,Yes,No,Yes,9,10.17,10.60,-0.01,-1.00,56.05
+55,Male,Smoker,Tetovo,80,15,100,190,Dry Cough,No,Yes,Yes,Yes,Yes,5,29.12,21.53,-0.02,14.95,30.33
+45,Female,Non-Smoker,Tetovo,100,50,120,100,No Cough,Yes,Yes,No,Yes,Yes,1,29.12,21.53,-0.02,14.95,30.33
+67,Female,Non-Smoker,Tetovo,10,15,25,10,No Cough,No,No,No,Yes,Yes,10,29.12,21.53,-0.02,14.95,30.33
+67,Female,Non-Smoker,Tetovo,10,15,25,10,No Cough,No,No,No,Yes,Yes,10,29.12,21.53,-0.02,14.95,30.33
+67,Female,Non-Smoker,Tetovo,10,15,25,10,No Cough,No,No,No,Yes,Yes,10,29.12,21.53,-0.02,14.95,30.33
+44,Female,Non-Smoker,Tetovo,1000,100,10,1,No Cough,Yes,Yes,No,Yes,Yes,4,29.12,21.53,-0.02,14.95,30.3345,Male,Non-Smoker,Tetovo,100,33,98,199,No Cough,No,Yes,No,Yes,Yes,1,29.12,21.53,-0.02,14.95,30.33
+45,Male,Non-Smoker,Tetovo,100,100,100,0.97,No Cough,No,Yes,No,No,No,1,29.12,21.53,-0.02,14.95,30.33
+45,Male,Non-Smoker,Tetovo,100,100,100,0.97,No Cough,No,No,No,No,No,1,29.12,21.53,-0.02,14.95,30.33
+43,Male,Smoker,Tetovo,-1,-1,-1,-0.01,Dry Cough,No,No,No,Yes,Yes,1,29.12,21.53,-0.02,14.95,30.33
+39,Female,Smoker,Tetovo,-1,-1,-1,-0.01,Dry Cough,No,No,No,Yes,Yes,1,29.12,21.53,-0.02,14.95,30.33

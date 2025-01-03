@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Asthma-Predicition-Using-Machine-Learning-and-Internet-of-Things
 
 ## ABSTRACT 
@@ -92,3 +93,6 @@ gmail : k.gokulappaduraikjgv@gmail.com
  
 
 
+=======
+# care-
+>>>>>>> 479f000309cbf53e73e27efc97f9aa56445597fa
